@@ -1,0 +1,752 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+html {
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+    color: #23292c;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+h1,
+h3,
+h4,
+ul,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width:100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* -------------------- */
+/* ---------REUSABLE ELEMENTS----------- */
+/* -------------------- */
+.wrapper {
+    width: 768px;
+    margin: 40px auto;
+}
+
+p {
+    line-height: 1.5;
+}
+.orange-text {
+    color: #e1560e;
+}
+
+.white-text {
+    color: white;
+}
+
+h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;  
+    text-align: center;
+}
+
+.wide-paragraph {
+    width: 50%;
+    text-align: center;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.view-details {
+    color: white;
+    font-size: 1.4rem;
+    background-color: #e1560e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    padding: 25px 70px;
+    margin: 50px;
+    transition: background-color 0.2s;
+}
+
+.view-details:hover {
+    background-color: #c94807; 
+}
+
+/* -------------------- */
+/* ---------HEADER----------- */
+/* -------------------- */
+
+header {
+    height: 100vh;
+    background-image: url(./assets/image-1.jpeg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.view-details {
+    opacity: 0.9;
+}
+.genuine {
+    width: 20%;
+}
+
+.food-passion {
+    width: 40%;
+    margin: 30px auto;
+}
+
+.cooking-since {
+    width: 30%;
+}
+
+.nav {
+    position: fixed;
+    left:-25%;
+    top: 0;
+    width: 15%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: left 0.7s;
+    min-width: 140px;
+}
+.menu-label {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    margin: 10px;
+	color: white;
+    cursor:pointer;
+    background-color: #23292c;
+    padding: 10px;
+    border-radius: 15px;
+    z-index:6
+}
+
+input.menu-checkbox[type="checkbox"] {
+	display: none;
+}
+
+input.menu-checkbox:checked + .nav {
+    left:0;
+}
+
+.logo-white {
+    width: 100px;
+    margin: 10px auto;
+}
+
+.nav p,
+.nav i {
+    
+}
+
+.nav p {
+    width: 65%;
+    text-align: center;
+    color: white;
+    opacity: 0.6;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.nav ul li {
+    display: inline-block;
+    padding: 18px;
+    text-align: center;
+}
+
+.nav ul li a {
+    color: white;
+    opacity: 0.6;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+    position: relative;
+}
+
+.nav ul li a::before {
+    content: "\f054";
+    font-family: FontAwesome;
+    position: absolute;
+    left:-10px;
+}
+
+.nav ul li a:hover {
+    opacity:1;
+}
+
+nav hr {
+    width: 80%;
+    margin: 10px 0;
+    color:white;
+    opacity:0.2;
+}
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.twitter-big {
+    font-size: 20px;
+    opacity:1;
+}
+
+.header-social {
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.header-social a {
+    opacity:0.6;
+}
+
+.header-social a:hover {
+    opacity: 1;
+}
+
+.header-social i {
+    color: white;
+}
+
+/* -------------------- */
+/* ---------END OF HEADER----------- */
+/* -------------------- */
+
+/* -------------------- */
+/* ---------ABOUT----------- */
+/* -------------------- */
+
+.about {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #eae5d6;
+}
+
+.about-text {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+width: 30%;
+margin-left:20%;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    opacity:0.8;
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+
+.profile-pic {
+    width: 70px;
+    border-radius: 50px;
+}
+.nametag {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.name {
+    padding: 8px;
+}
+.nametag p {
+    margin: 5px auto;
+}
+
+.about-chevrons {
+    font-size: 3rem;
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin: 33px 0;
+}
+
+.about-chevrons a {
+    text-decoration: none;
+    color: #23292c;
+}
+
+.chef-pic {
+    width: 50%;
+    object-fit: cover;
+}
+
+/* -------------------- */
+/* ---------END OF ABOUT----------- */
+/* -------------------- */
+
+/* -------------------- */
+/* ---------GALLERY----------- */
+/* -------------------- */
+
+.gallery {
+    background-color: #23292c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-meat {
+    border: 1px solid #73848E;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+
+.all-meat li {
+    display: inline-block;
+    border-left: 1px solid #73848E;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+.all-meat li:first-child {
+    border-left: none;
+}
+
+.gallery .all-meat li a {
+    text-decoration: none;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.images li {
+    position: relative;
+    width: 20%;
+}
+
+.images img {
+    height: 100%;
+    width: 100%;
+}
+
+.images li:hover .project-title,
+.images li:hover .gallery-icons {
+    opacity:1;
+}
+
+.project-title {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top:0;
+    opacity: 0;
+}
+
+.gallery-icons {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity:0;
+    transition: all 0.5s;
+    background-color: white;
+}
+
+
+/* -------------------- */
+/* ---------END OF GALLERY----------- */
+/* -------------------- */
+
+/* -------------------- */
+/* ---------SERVICES----------- */
+/* -------------------- */
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-list li {
+    margin: 10px;
+    width: calc(25% - 20px);
+    text-align: center;
+}
+
+.service-list li img {
+   height: 100px;
+   width: auto;
+}
+
+.service-list li h3 {
+    margin: 30px 0;
+}
+
+/* -------------------- */
+/* ---------END OF SERVICES----------- */
+/* -------------------- */
+
+/* -------------------- */
+/* ---------MENU----------- */
+/* -------------------- */
+
+.menu-food {
+    /* background-image: url(./assets/image-13-2.jpg); */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/image-13-2.jpg);
+    background-size: cover;
+}
+
+.menu-description {
+    display: flex;
+    align-items: flex-end;
+}
+
+.menu-description hr {
+    border-top: dotted 2px white; 
+    color:rgba(0, 0, 0, 0);
+    width: 80%;
+}
+
+
+
+
+/* -------------------- */
+/* ---------END OF MENU----------- */
+/* -------------------- */
+
+/* -------------------- */
+/* ---------FOOTER----------- */
+/* -------------------- */
+
+footer {
+    background-color: #23292c;
+    position: relative;
+}
+/* ---form--- */
+.form {
+    background-color: white;
+    width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    left:24%;
+    bottom: 5%;
+    text-align: center;
+}
+
+.form-name input,
+.form-email input,
+.form-message textarea {
+    width: 100%;
+    background-color: #FCFCFC;
+    border: 2px solid  	#F1F1F1;
+}
+
+.form-name,
+.form-email,
+.form-message {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+input {
+    height: 30px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.form h2 {
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.send-message {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 20px 40px;
+    border: 2px solid black;
+    margin: 20px 0;
+    cursor: pointer;
+    background-color: white;
+}
+
+.fa-user,
+.fa-envelope {
+    position:absolute;
+    color: black;
+    right:10px;
+    top:40%;
+}
+
+/* ----end of form---- */
+
+.footer-info {
+    background-color: #23292c;
+    display: flex;
+    justify-content: space-between;
+    color: #73848E;
+    padding: 100px 0 30px 0;
+    margin-bottom: 0;
+    align-items: flex-end;
+    position: relative;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logo {
+    width: 75px;
+    margin: 20px 0;
+}
+
+.footer-social i {
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+.footer-social i{
+    color: #73848E;
+}
+
+.footer-social a:hover i {
+    color: white;
+}
+
+.logoSocial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright {
+    text-align: center;
+    color: #73848E;
+    margin: 0;
+}
+
+.contact-container {
+    position: relative;
+}
+
+.contact-icon {
+    position: absolute;
+    top: 0;
+    left:-20px;
+    width: 15px;
+}
+/* -------------------- */
+/* ---------END OF FOOTER----------- */
+/* -------------------- */
+
+/* -------------------- */
+/* ---------MEDIAQUIRIES----------- */
+/* -------------------- */
+
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 768px) {
+/* ---------HEADER----------- */
+
+.wrapper {
+    width: 100%;
+}
+
+.genuine {
+    width: 40%;
+}
+
+.food-passion {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.cooking-since {
+    width: 60%;
+}
+    
+.nav {
+    width: 50%;
+    left:-50%;
+    font-size: 2rem;
+}
+
+.logo-white {
+    width: 35%;
+}
+
+input.menu-slide[type="checkbox"]:checked + .nav {
+    left:0;
+}
+
+.nav hr {
+    display: none;
+}
+.header-info {
+    display: none;
+}
+
+.nav ul li a {
+    opacity:1;
+}
+
+.nav ul li a::before {
+    left: -20px;
+}
+
+/* ------ABOUT-------------- */ 
+.nametag {
+    flex-direction: column;
+    align-items: center;
+}
+
+.chef-pic {
+    display: none;
+}
+
+.about-text {
+    width: 60%;
+    align-items: center;
+    text-align: center;
+}
+
+/* ----------GALLERY---------- */
+.images li {
+    width: 50%;
+}
+
+/* ----------SERVICES---------- */
+
+.service-list {
+    flex-wrap:wrap;
+}
+
+.service-list li {
+    width: calc(50% - 20px);
+}
+/* ----------FOOTER---------- */
+.map {
+    display: none;
+}
+
+.form {
+    position: static;
+    width: 100%;
+}
+
+.form-name,
+.form-email,
+.form-message {
+    width: 70%;
+}
+
+.footer-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.copyright {
+    align-self: center;
+}
+
+.contact {
+    text-align: center;
+}
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .wrapper {
+        width: 100%;
+    }
+    .view-details {
+        padding: 10px 20px;
+    }
+
+    .nav {
+        width: 100%;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        left:-100%;
+        opacity:0.9;
+    }
+
+    input.menu-slide[type="checkbox"] {
+        left:0;
+    }
+
+    header {
+        background: width 100%;
+    }
+
+    .profile-pic {
+        left: -60px;
+        top:10px;
+    }
+
+    .about-text h2 {
+        width: 250px;
+    }
+
+    .all-meat li {
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+
+    .wide-paragraph {
+        width: 80%;
+    }
+}
